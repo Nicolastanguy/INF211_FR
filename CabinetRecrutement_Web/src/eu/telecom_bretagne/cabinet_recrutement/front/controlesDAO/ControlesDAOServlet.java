@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import eu.telecom_bretagne.cabinet_recrutement.data.dao.CandidatureDAO;
 import eu.telecom_bretagne.cabinet_recrutement.data.dao.EntrepriseDAO;
 import eu.telecom_bretagne.cabinet_recrutement.data.model.Entreprise;
 import eu.telecom_bretagne.cabinet_recrutement.front.utils.ServicesLocator;
@@ -42,9 +43,11 @@ public class ControlesDAOServlet extends HttpServlet
     
     // Récupération de la réféence vers le(s) DAO(s)
 		EntrepriseDAO entrepriseDAO = null;
+		CandidatureDAO candidatureDAO = null;
     try
     {
 	    entrepriseDAO = (EntrepriseDAO) ServicesLocator.getInstance().getRemoteInterface("EntrepriseDAO");
+	    candidatureDAO = (CandidatureDAO) ServicesLocator.getInstance().getRemoteInterface("CandidatureDAO");
     }
     catch (ServicesLocatorException e)
     {
@@ -65,7 +68,7 @@ public class ControlesDAOServlet extends HttpServlet
 		
 		out.println("Obtention de l'entreprise n° 1 :");
 		Entreprise e = entrepriseDAO.findById(1);
-		out.println(e.getId());
+		//out.println(e.getId());
 		out.println(e.getNom());
 		out.println(e.getDescriptif());
 		out.println(e.getAdressePostale());
@@ -73,7 +76,7 @@ public class ControlesDAOServlet extends HttpServlet
 
 		out.println("Obtention de l'entreprise n° 2 :");
 		e = entrepriseDAO.findById(2);
-		out.println(e.getId());
+		//out.println(e.getId());
 		out.println(e.getNom());
 		out.println(e.getDescriptif());
 		out.println(e.getAdressePostale());
