@@ -1,5 +1,9 @@
 package eu.telecom_bretagne.cabinet_recrutement.data.dao;
 
+/*
+ * @author Nicolas Tanguy @ Tanguy Le pors
+ */
+
 import java.util.List;
 
 import javax.ejb.LocalBean;
