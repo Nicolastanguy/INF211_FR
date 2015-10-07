@@ -1,9 +1,5 @@
 package eu.telecom_bretagne.cabinet_recrutement.data.dao;
 
-/*
- * @author Nicolas Tanguy @ Tanguy Le pors
- */
-
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -46,8 +42,21 @@ public class EntrepriseDAO
 	{
 		Query query = entityManager.createQuery("select entreprise from Entreprise entreprise order by entreprise.id");
 		List l = query.getResultList();
-
 		return (List<Entreprise>) l;
 	}
-	//-----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
+
+  public Entreprise create(Entreprise entreprise) {
+      this.entityManager.persist(entreprise);
+      return entreprise;
+  }
+
+  public Entreprise update(Entreprise entreprise) {
+      return this.entityManager.merge(entreprise);
+  }
+
+  public void delete(Entreprise entreprise) {
+	  entreprise = this.entityManager.merge(entreprise);
+      this.entityManager.remove(entreprise);
+  }
 }
