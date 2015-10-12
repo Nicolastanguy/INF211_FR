@@ -27,7 +27,7 @@ public class Entreprise implements Serializable
 	//-----------------------------------------------------------------------------
 	public Entreprise() {}
 	//-----------------------------------------------------------------------------
-	public Integer getId()             { return this.id;             }
+	public Integer getNomEntreprise()  { return this.num_entreprise;             }
 	public String  getNom()            { return this.nom;            }
 	public String  getDescriptif()     { return this.descriptif;     }
 	public String  getAdressePostale() { return this.adressePostale; }

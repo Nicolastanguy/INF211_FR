@@ -42,7 +42,7 @@ public class CandidatureDAO
 	//----------------------------------------------------------------------------
   public List<Candidature> findAll()
 	{
-		Query query = entityManager.createQuery("select candidature from Candidature candidature order by candidature.id");
+		Query query = entityManager.createQuery("select candidature from Candidature candidature order by candidature.numCandidature");
 		List l = query.getResultList();
 		return (List<Candidature>) l;
 	}

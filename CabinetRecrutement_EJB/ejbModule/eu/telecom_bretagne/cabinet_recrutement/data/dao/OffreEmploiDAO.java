@@ -43,14 +43,14 @@ public class OffreEmploiDAO
 	//----------------------------------------------------------------------------
   public List<OffreEmploi> findAll()
 	{
-		Query query = entityManager.createQuery("select offre_emploi from OffreEmploi offre_emploi order by offre_emploi.id");
+		Query query = entityManager.createQuery("select offreemploi from offreemploi offreemploi order by offreemploi.numoffreemploi");
 		List l = query.getResultList();
 		return (List<OffreEmploi>) l;
 	}
 	//-----------------------------------------------------------------------------
-  public List<OffreEmploi> findEntreprise(Entreprise entreprise)
+  public List<OffreEmploi> findOffreEmploi(OffreEmploi offreEmploi)
 	{
-		Query query = entityManager.createQuery("select offre_emploi from OffreEmploi offre_emploi where offre_emploi.entreprise=entreprise order by offre_emploi.id");
+		Query query = entityManager.createQuery("select offreemploi from offreemploi offreemploi where offre_emploi.entreprise=entreprise order by offre_emploi.id");
 		List l = query.getResultList();
 		return (List<OffreEmploi>) l;
 	}
